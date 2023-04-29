@@ -51,7 +51,6 @@ include("auth_session.php");
 <a href="#">About Us</a>
                 <br>
 
-
 <?php
 
     
@@ -74,7 +73,7 @@ include("auth_session.php");
         if ($result) {
             echo "<div class='form'>
                   <h3>You are registered successfully.</h3><br/>
-                  <p class='link'>Click here to <a href='login.php'>Login</a></p>
+                  
                   </div>";
         } else {
             echo "<div class='form'>
@@ -90,8 +89,7 @@ include("auth_session.php");
         <input type="text" class="login-input" name="Group_Name" placeholder="Group name" required />
         
         <input type="submit" name="submit" value="Register" class="login-button">
-      <p class="link">  <p>Do you have an account</p><a href="group.php">Click Here  To Register again</a></p>
-       
+     
     </form>
 <?php
     }

@@ -70,11 +70,13 @@ include("auth_session.php");
         $Group_Id = stripslashes($_REQUEST['Group_Id']);
         //escapes special characters in a string
         $Group_Id = mysqli_real_escape_string($con, $Group_Id);
+        $password = stripslashes($_REQUEST['password']);
+        $password = mysqli_real_escape_string($con, $password);
         
        
        
-        $query    = "INSERT into `user` (user_id,username,phone_number,Location,Group_Id)
-                     VALUES ('$user_id','$username','$phone_number',' $Location','$Group_Id')";
+        $query    = "INSERT into `user` (user_id,username,phone_number,Location,Group_Id,password)
+                     VALUES ('$user_id','$username','$phone_number',' $Location','$Group_Id','" . md5($password) . "')";
         $result   = mysqli_query($con, $query);
         if ($result) {
             echo "<div class='form'>
@@ -96,7 +98,7 @@ include("auth_session.php");
         <input type="text" class="login-input" name="phone_number" placeholder="phone_number" required />
         <input type="text" class="login-input" name="Location" placeholder="Location" required />
         <input type="text" class="login-input" name="Group_Id" placeholder="Group_Id" required />
-        
+                <input type="password" class="login-input" name="password" placeholder="Password">
         <input type="submit" name="submit" value="Register" class="login-button">
       <p class="link">  <p>Do you have an account</p><a href="members_reg.php">Click Here  To Register again</a></p>
        

@@ -113,7 +113,7 @@
     <nav>
         <ul>
             <li><a href="home.php">Home</a></li>
-            <li><a href="login.php">Admin Login</a></li>
+            <li><a href="#">User login</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
@@ -137,7 +137,7 @@
         if ($rows == 1) {
             $_SESSION['username'] = $username;
             // Redirect to user dashboard page
-            header("Location: dashboard.php");
+            header("Location: user_Dash.php");
         } else {
             echo "<div class='form'>
                   <h3>Incorrect Username/password.</h3><br/>
@@ -147,7 +147,7 @@
     } else {
 ?>
     <form class="form" method="post" name="login">
-        <h1 class="login-title">Admin Login</h1>
+        <h1 class="login-title">User login</h1>
         <input type="text" class="login-input" name="username" placeholder="Username" autofocus="true"/>
         <input type="password" class="login-input" name="password" placeholder="Password"/>
         <input type="submit" value="Login" name="submit" class="login-button"/>
@@ -160,8 +160,6 @@
     </main>
     <footer>
         <div>
-            <img src="C:\xampp\htdocs\copyright.png">
-            <p>&copy; 2023 My Website. All rights reserved.</p>
         </div>
     </footer>
 </body>
